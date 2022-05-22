@@ -16,7 +16,7 @@ public class MyApp {
                     .toLowerCase(Locale.ROOT)
                     .replace(" ", "")
                     .split("");                                     //removing spaces, converting all letters to the same size
-            //splitting string to array
+                                                                    //splitting string to array
             letterCounter(resultString);
         }
     }
