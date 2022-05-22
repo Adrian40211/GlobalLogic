@@ -1,6 +1,8 @@
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.util.*;
 
-public class Main {
+public class MyApp {
     static Map<String, Integer> letterCount = new HashMap<>();
     public static void main(String[] args) {
         StringBuilder buildString = new StringBuilder();
@@ -21,9 +23,9 @@ public class Main {
             if(input[i].equals(input[0])) counter++;
         }
         letterCount.put(input[0], counter);
-        String[] newInput = Arrays.toString(input).replace(input[0],"").split("");
-        if(newInput.length>0) {
-            letterCounter(newInput);
+        input= ArrayUtils.removeAllOccurrences(input,input[0]);
+        if(input.length>0) {
+            letterCounter(input);
         } else {
             displayResults();
         }
