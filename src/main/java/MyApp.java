@@ -5,16 +5,20 @@ import java.util.*;
 public class MyApp {
     static Map<String, Integer> letterCount = new HashMap<>();      //declaring map where key will be letters from String and values will be their repetitions
     public static void main(String[] args) {
-        StringBuilder buildString = new StringBuilder();
-        for(String s : args) {
-            buildString.append(s);   //building string
+        if(args.length == 0) {
+            System.out.println("No arguments provided");
+        } else {
+            StringBuilder buildString = new StringBuilder();
+            for (String s : args) {
+                buildString.append(s);   //building string
+            }
+            String[] resultString = buildString.toString()
+                    .toLowerCase(Locale.ROOT)
+                    .replace(" ", "")
+                    .split("");                                         //removing spaces, converting all letters to the same size
+            //splitting string to array
+            letterCounter(resultString);
         }
-        String[] resultString = buildString.toString()
-                .toLowerCase(Locale.ROOT)
-                .replace(" ","")
-                .split("");                                         //removing spaces, converting all letters to the same size
-                                                                    //splitting string to array
-        letterCounter(resultString);
     }
 
     static void letterCounter(String[] input) {
