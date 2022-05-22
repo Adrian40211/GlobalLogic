@@ -12,7 +12,7 @@ public class MyApp {
         String[] resultString = buildString.toString()
                 .toLowerCase(Locale.ROOT)
                 .replace(" ","")
-                .split("");                                   //removing spaces, converting all letters to the same size
+                .split("");                                         //removing spaces, converting all letters to the same size
                                                                     //splitting string to array
         letterCounter(resultString);
     }
